@@ -4,11 +4,12 @@
 </script>
 
 <div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
+	<div class="flex-container">
+		<Header />
+		<main>
+			<slot />
+		</main>
+	</div>
 
 	<footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
@@ -20,6 +21,9 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+	}
+	.flex-container {
+		display: flex;
 	}
 
 	main {
