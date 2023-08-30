@@ -1,7 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import rhLogoDark from '$lib/images/rh-logo-dark.svg';
+	import rhLogoDark from '$lib/images/rhLogo2.svg';
 	import github from '$lib/images/github.svg';
+
+	// export const activePage = $page.url.pathname;
+	// console.log('activePage', activePage);
+	console.log('page', $page);
+	$: activePage = $page.url.pathname
+	$: console.log('activePage', activePage);
 </script>
 
 <header>
@@ -13,14 +19,14 @@
 
 	<nav>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li class="{activePage === '/' ? 'active' : ''}" aria-current={activePage === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+			<li class="{activePage === '/about' ? 'active' : ''}" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li class="{activePage === '/experience' ? 'active' : ''}" aria-current={$page.url.pathname === '/experience' ? 'page' : undefined}>
+				<a href="/experience">Experience</a>
 			</li>
 		</ul>
 	</nav>
@@ -35,10 +41,7 @@
 <style>
 	header {
 		display: flex;
-		flex-direction: column;
 		justify-content: space-between;
-		height: 100vh;
-		background-color: white;
 	}
 
 	.corner {
@@ -62,7 +65,6 @@
 
 	nav {
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
 	}
@@ -83,7 +85,6 @@
 		margin: 0;
 		height: 3em;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		/* align-items: center; */
 		list-style: none;
@@ -94,19 +95,9 @@
 	li {
 		position: relative;
 		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 1px;
-		left: 88%;
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-		transform: rotate(90deg);
+		&.active {
+			text-decoration: underline;
+		}
 	}
 
 	nav a {
