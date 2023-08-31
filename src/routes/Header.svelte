@@ -2,13 +2,6 @@
 	import { page } from '$app/stores';
 	import rhLogoDark from '$lib/images/rhLogo2.svg';
 	import github from '$lib/images/github.svg';
-
-	// export const prerender = false;
-	// export const activePage = $page.url.pathname;
-	// console.log('activePage', activePage);
-	// console.log('page', $page);
-	// $: activePage = $page.url.pathname
-	// $: console.log('activePage', activePage);
 </script>
 
 <header>
@@ -23,7 +16,7 @@
 			<li class="{$page.url.pathname === '/' ? 'active' : ''}" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li class="{$page.url.pathname === '/about' ? 'active' : ''}" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+			<li class="{$page.url.pathname === '/about' ? 'active' : ''}" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
 			<li class="{$page.url.pathname === '/experience' ? 'active' : ''}" aria-current={$page.url.pathname === '/experience' ? 'page' : undefined}>
@@ -46,6 +39,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		background-color: white;
 	}
 
 	.corner {
@@ -70,7 +64,6 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
 	}
 
 	svg {
