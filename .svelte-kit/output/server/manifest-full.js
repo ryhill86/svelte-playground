@@ -10,7 +10,7 @@ return {
 	assets: new Set(["favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.6f534d0f.js","app":"_app/immutable/entry/app.8b4cfeb9.js","imports":["_app/immutable/entry/start.6f534d0f.js","_app/immutable/chunks/scheduler.cbf234a0.js","_app/immutable/chunks/singletons.ebebfda8.js","_app/immutable/chunks/index.14349a18.js","_app/immutable/chunks/parse.bee59afc.js","_app/immutable/entry/app.8b4cfeb9.js","_app/immutable/chunks/scheduler.cbf234a0.js","_app/immutable/chunks/index.e8e99d68.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.b216c680.js","app":"_app/immutable/entry/app.3a93ee13.js","imports":["_app/immutable/entry/start.b216c680.js","_app/immutable/chunks/scheduler.17727410.js","_app/immutable/chunks/singletons.fe486f55.js","_app/immutable/chunks/index.5870c42e.js","_app/immutable/entry/app.3a93ee13.js","_app/immutable/chunks/scheduler.17727410.js","_app/immutable/chunks/index.2adcb947.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -35,15 +35,15 @@ return {
 				endpoint: null
 			},
 			{
-				id: "/sverdle",
-				pattern: /^\/sverdle\/?$/,
+				id: "/experience",
+				pattern: /^\/experience\/?$/,
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 4 },
 				endpoint: null
 			},
 			{
-				id: "/sverdle/how-to-play",
-				pattern: /^\/sverdle\/how-to-play\/?$/,
+				id: "/projects",
+				pattern: /^\/projects\/?$/,
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 5 },
 				endpoint: null

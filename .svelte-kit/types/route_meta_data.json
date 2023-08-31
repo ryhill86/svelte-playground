@@ -6,10 +6,5 @@
 		"src/routes/about/+page.ts"
 	],
 	"/experience": [],
-	"/sverdle": [
-		"src/routes/sverdle/+page.server.ts"
-	],
-	"/sverdle/how-to-play": [
-		"src/routes/sverdle/how-to-play/+page.ts"
-	]
+	"/projects": []
 }

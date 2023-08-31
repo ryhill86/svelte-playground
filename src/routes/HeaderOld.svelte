@@ -1,42 +1,38 @@
 <script>
 	import { page } from '$app/stores';
-	import rhLogoDark from '$lib/images/rhLogo2.svg';
+	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
-
-	// export const prerender = false;
-	// export const activePage = $page.url.pathname;
-	// console.log('activePage', activePage);
-	// console.log('page', $page);
-	// $: activePage = $page.url.pathname
-	// $: console.log('activePage', activePage);
 </script>
 
 <header>
 	<div class="corner">
-		<a href="/">
-			<img src={rhLogoDark} alt="Ryan Hill Logo" />
+		<a href="https://kit.svelte.dev">
+			<img src={logo} alt="SvelteKit" />
 		</a>
 	</div>
 
 	<nav>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+		</svg>
 		<ul>
-			<li class="{$page.url.pathname === '/' ? 'active' : ''}" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li class="{$page.url.pathname === '/about' ? 'active' : ''}" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
-			<li class="{$page.url.pathname === '/experience' ? 'active' : ''}" aria-current={$page.url.pathname === '/experience' ? 'page' : undefined}>
-				<a href="/experience">Experience</a>
-			</li>
-			<li class="{$page.url.pathname === '/projects' ? 'active' : ''}" aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-				<a href="/projects">Projects</a>
+			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
+				<a href="/sverdle">Sverdle</a>
 			</li>
 		</ul>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+		</svg>
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/ryhill86/">
+		<a href="https://github.com/sveltejs/kit">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
@@ -79,9 +75,9 @@
 		display: block;
 	}
 
-	/* path {
+	path {
 		fill: var(--background);
-	} */
+	}
 
 	ul {
 		position: relative;
@@ -90,7 +86,7 @@
 		height: 3em;
 		display: flex;
 		justify-content: center;
-		/* align-items: center; */
+		align-items: center;
 		list-style: none;
 		background: var(--background);
 		background-size: contain;
@@ -99,9 +95,18 @@
 	li {
 		position: relative;
 		height: 100%;
-		&.active {
-			text-decoration: underline;
-		}
+	}
+
+	li[aria-current='page']::before {
+		--size: 6px;
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: calc(50% - var(--size));
+		border: var(--size) solid transparent;
+		border-top: var(--size) solid var(--color-theme-1);
 	}
 
 	nav a {

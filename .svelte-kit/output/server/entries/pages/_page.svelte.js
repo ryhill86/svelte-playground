@@ -1,5 +1,5 @@
-import { n as noop, c as create_ssr_component, a as subscribe, e as escape, b as add_attribute, v as validate_component } from "../../chunks/ssr.js";
-import { w as writable } from "../../chunks/index2.js";
+import { d as noop, c as create_ssr_component, a as subscribe, e as escape, b as add_attribute, v as validate_component } from "../../chunks/ssr.js";
+import { w as writable } from "../../chunks/index.js";
 const is_client = typeof window !== "undefined";
 let now = is_client ? () => window.performance.now() : () => Date.now();
 let raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
