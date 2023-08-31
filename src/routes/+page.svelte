@@ -1,6 +1,11 @@
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Home sweet home" />
+	<style>
+		body {
+		  background: #003857;
+		}
+	  </style>
 </svelte:head>
 
 <div class="flex-container">
@@ -20,6 +25,7 @@
 		justify-content: space-around;
 		align-items: center;
 		flex: 1;
+		color: white;
 	}
 	.text-column {
 		display: flex;

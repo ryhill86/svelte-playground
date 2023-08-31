@@ -1,6 +1,11 @@
 <svelte:head>
 	<title>Projects</title>
 	<meta name="description" content="Ryan's project portfolio" />
+    <style>
+        body {
+            background: #57002A;
+        }
+    </style>
 </svelte:head>
 
 <script>
